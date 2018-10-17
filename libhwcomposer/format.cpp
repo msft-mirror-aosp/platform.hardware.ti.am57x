@@ -16,7 +16,7 @@
 
 #include <cstdint>
 
-#include <cutils/log.h>
+#include <log/log.h>
 
 #include <linux/types.h>
 
