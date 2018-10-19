@@ -462,7 +462,7 @@ static int hwc_prepare(struct hwc_composer_device_1* dev, size_t numDisplays, hw
             continue;
 
         if (contents->numHwLayers == 0) {
-            ALOGW("Prepare given no content for display %d", i);
+            ALOGW("Prepare given no content for display %zu", i);
             continue;
         }
 
@@ -531,7 +531,7 @@ static int hwc_set(struct hwc_composer_device_1* dev, size_t numDisplays, hwc_di
             continue;
 
         if (contents->numHwLayers == 0) {
-            ALOGE("Set given no content for display %d", i);
+            ALOGE("Set given no content for display %zu", i);
             continue;
         }
 
