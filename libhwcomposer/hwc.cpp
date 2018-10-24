@@ -22,7 +22,7 @@
 #include <sys/ioctl.h>
 #include <sys/resource.h>
 
-#include <cutils/log.h>
+#include <log/log.h>
 #include <cutils/properties.h>
 #define HWC_REMOVE_DEPRECATED_VERSIONS 1
 #include <hardware/hardware.h>

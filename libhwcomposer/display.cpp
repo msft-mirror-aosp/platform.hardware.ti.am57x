@@ -18,7 +18,7 @@
 
 #include <cstdint>
 
-#include <cutils/log.h>
+#include <log/log.h>
 #include <cutils/properties.h>
 
 #include "display.h"
