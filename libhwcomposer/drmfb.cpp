@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <cutils/log.h>
+#include <log/log.h>
 #include <drm/drm_fourcc.h>
 #include <hardware/hwcomposer.h>
 
