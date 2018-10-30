@@ -30,6 +30,7 @@ cc_library_shared {
         "-Wno-unused-parameter",
         "-Wno-missing-field-initializers",
         "-fexceptions",
+        "-Wno-implicit-fallthrough", // in format.cpp
     ],
 
     shared_libs: [
