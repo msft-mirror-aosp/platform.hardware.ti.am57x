@@ -29,16 +29,19 @@
 #include <android-base/unique_fd.h>
 #include <fstab/fstab.h>
 
+using android::fs_mgr::Fstab;
+using android::fs_mgr::GetEntryForMountPoint;
+using android::fs_mgr::ReadDefaultFstab;
+
 constexpr off_t kBootloaderControlOffset = offsetof(bootloader_message_ab, slot_suffix);
 
 static std::string get_misc_blk_device(std::string* err) {
-  std::unique_ptr<fstab, decltype(&fs_mgr_free_fstab)> fstab(fs_mgr_read_fstab_default(),
-                                                             fs_mgr_free_fstab);
-  if (!fstab) {
+  Fstab fstab;
+  if (!ReadDefaultFstab(&fstab)) {
     *err = "failed to read default fstab";
     return "";
   }
-  fstab_rec* record = fs_mgr_get_entry_for_mount_point(fstab.get(), "/misc");
+  auto record = GetEntryForMountPoint(&fstab, "/misc");
   if (record == nullptr) {
     *err = "failed to find /misc partition";
     return "";
